@@ -1,0 +1,9 @@
+.header {
+  width: 100%;
+  height: 60px;
+  background-color: #015cb373;
+  color: whitesmoke;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 55px;
+}
