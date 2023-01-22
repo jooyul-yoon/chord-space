@@ -1,9 +1,88 @@
-.header {
-  width: 100%;
-  height: 60px;
-  background-color: #015cb373;
-  color: whitesmoke;
+@font-face {
+  font-family: "RixYeoljeongdo_Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2102-01@1.0/RixYeoljeongdo_Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.main {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-width: 100vw;
+  min-height: 100vh;
+  background: #fffbe9;
+}
+.title {
+  position: relative;
+  font-size: 64px;
+  letter-spacing: -1px;
   text-align: center;
-  font-size: 2rem;
-  line-height: 55px;
+  font-family: "RixYeoljeongdo_Regular";
+  transition: all 0.2s;
+  width: 200px;
+  height: 100px;
+}
+.title .chord {
+  position: absolute;
+  color: #c59230;
+  transition: all 0.5s;
+  top: -33px;
+  left: -55px;
+}
+.title .space {
+  position: absolute;
+  color: #362904;
+  transition: all 0.5s;
+  top: 33px;
+}
+.title img {
+  opacity: 0;
+  position: absolute;
+  top: 7px;
+  transition: all 1s;
+}
+.title:hover .chord {
+  transform: translate(-100px, 0);
+}
+.title:hover .space {
+  transform: translate(80px, 0);
+}
+.title:hover span {
+  transform: translate(10px, 50px);
+}
+.title:hover img {
+  opacity: 1;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+}
+.buttons a {
+  min-width: 110px;
+  background-color: #ad8b73;
+  border: none;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  margin-bottom: 0.5em;
+  transition: background-color 0.2s;
+
+  color: #ffffff;
+  font-family: "Pretendard-Regular", "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1em;
+  line-height: 1.5em;
+  cursor: pointer;
+}
+.buttons a:hover {
+  background-color: #68c39f;
 }

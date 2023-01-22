@@ -1,12 +1,16 @@
+import "../styles/globals.css";
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html>
+    <html lang="ko">
       <head />
-      <body>{children}</body>
+      <body>
+        <nav></nav>
+        {children}
+      </body>
     </html>
-  )
+  );
 }
