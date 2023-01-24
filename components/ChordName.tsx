@@ -12,7 +12,7 @@ export function ChordName({ keyValue, scale, tension }: Props) {
   return (
     <div className={styles.container}>
       <Key keyValue={keyValue} size={60} />
-      <Scale scale={scale} tension={tension} size={40} />
+      <Scale scale={scale} tension={tension} size={50} />
     </div>
   );
 }

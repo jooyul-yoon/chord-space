@@ -21,7 +21,30 @@
 }
 
 .middle {
+  position: relative;
   height: 55vh;
+}
+.fretboard {
+  display: grid;
+  place-content: center;
+  width: calc(100% - 220px);
+  height: 80%;
+  background-color: red;
+}
+.position {
+  position: absolute;
+  bottom: 30px;
+  display: grid;
+  place-content: center;
+  width: 100%;
+}
+.input {
+  position: absolute;
+  top: 0;
+  left: calc(100vw - 180px);
+  display: grid;
+  place-content: center;
+  height: 100%;
 }
 .bottom {
   height: 25vh;

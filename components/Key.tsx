@@ -8,18 +8,15 @@ interface Props {
 
 export default function Key({ keyValue, size }: Props) {
   return (
-    <div className={styles.key} style={{ marginRight: size / 6 }}>
-      <span style={{ fontSize: size }}>{keyValue[0].toUpperCase()}</span>
+    <div
+      className={styles.key}
+      style={{ height: size * 1.1, marginRight: size / 6 }}
+    >
+      <div style={{ fontSize: size }}>{keyValue[0].toUpperCase()}</div>
       {(keyValue.includes("%2B") || keyValue.includes("+")) && (
-        <span className={styles.half} style={{ fontSize: size / 3 }}>
-          #
-        </span>
+        <div style={{ fontSize: size * 0.9 }}>#</div>
       )}
-      {keyValue.includes("-") && (
-        <span className={styles.half} style={{ fontSize: size / 3 }}>
-          ♭
-        </span>
-      )}
+      {keyValue.includes("-") && <div style={{ fontSize: size }}>♭</div>}
     </div>
   );
 }

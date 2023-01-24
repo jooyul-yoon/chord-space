@@ -1,15 +1,14 @@
 .container {
   display: flex;
+  align-items: baseline;
   position: relative;
 }
 .key {
+  display: flex;
+  align-items: center;
   position: relative;
   font-weight: bold;
   user-select: none;
-}
-.half {
-  position: absolute;
-  top: -5px;
 }
 .scale {
   position: relative;
@@ -18,7 +17,6 @@
 }
 .tension {
   position: absolute;
-  bottom: 28px;
-  right: -18px;
+  top: 0;
   font-weight: bold;
 }
