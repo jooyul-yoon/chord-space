@@ -1,28 +1,24 @@
 .container {
   display: flex;
   position: relative;
-  user-select: none;
 }
 .key {
-  font-size: 64px;
+  position: relative;
   font-weight: bold;
-  margin-right: 10px;
+  user-select: none;
 }
 .half {
-  font-size: 20px;
-  font-size: 26px;
   position: absolute;
   top: -5px;
 }
 .scale {
   position: relative;
-  font-size: 40px;
-  padding-top: 20px;
+  padding-top: 17px;
+  user-select: none;
 }
 .tension {
   position: absolute;
   bottom: 28px;
   right: -18px;
-  font-size: 22px;
   font-weight: bold;
 }

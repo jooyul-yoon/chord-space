@@ -1,11 +1,31 @@
-.component {
-  width: 200px;
-  height: 200px;
+.main {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid black;
   flex-direction: column;
+
+  min-width: 100vw;
+  min-height: 100vh;
+  background: #fffbe9;
+}
+.homeBtn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 34px;
+  height: 37px;
+}
+
+.top {
+  height: 20vh;
+  margin-left: 10vw;
+  padding-top: 20px;
+}
+
+.middle {
+  height: 55vh;
+}
+.bottom {
+  height: 25vh;
+  background: #f6e6cd;
 }
 
 .error {

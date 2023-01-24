@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import styles from "./chord.module.css";
+import styles from "../chord.module.css";
 
 export default function Error({ error, reset }) {
   useEffect(() => {

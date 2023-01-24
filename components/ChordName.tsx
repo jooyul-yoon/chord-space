@@ -11,8 +11,8 @@ interface Props {
 export function ChordName({ keyValue, scale, tension }: Props) {
   return (
     <div className={styles.container}>
-      <Key keyValue={keyValue} />
-      <Scale scale={scale} tension={tension} />
+      <Key keyValue={keyValue} size={60} />
+      <Scale scale={scale} tension={tension} size={40} />
     </div>
   );
 }
