@@ -24,27 +24,52 @@
   position: relative;
   height: 55vh;
 }
-.fretboard {
-  display: grid;
-  place-content: center;
-  width: calc(100% - 220px);
-  height: 80%;
-  background-color: red;
-}
 .position {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   bottom: 30px;
   display: grid;
   place-content: center;
   width: 100%;
 }
+.position h1 {
+  font-family: "Pretendard-Regular", "Source Sans Pro", sans-serif;
+  margin: 0;
+}
+.position div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+.position span {
+  margin: 0 10px;
+  font-family: "Pretendard-Regular", "Source Sans Pro", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+.position i {
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.position i:hover {
+  scale: 1.2;
+}
 .input {
   position: absolute;
   top: 0;
   left: calc(100vw - 180px);
-  display: grid;
+  display: flex;
   place-content: center;
+  flex-direction: column;
+  align-items: flex-end;
   height: 100%;
+  font-family: "Pretendard-Regular", "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  gap: 20px;
+  cursor: pointer;
 }
 .bottom {
   height: 25vh;

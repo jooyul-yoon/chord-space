@@ -7,7 +7,7 @@ import { useEffect } from "react";
 export default function Page() {
   const router = useRouter();
   useEffect(() => {
-    router.push("c/maj");
+    router.push("/chord/c?scale=maj&tension=none");
   }, []);
   return null;
 }

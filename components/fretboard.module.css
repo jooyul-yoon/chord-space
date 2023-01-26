@@ -1,0 +1,11 @@
+.wrapper {
+  display: grid;
+  place-content: center;
+  position: relative;
+  width: calc(100% - 220px);
+  height: 80%;
+}
+
+.wrapper img {
+  scale: 0.7;
+}

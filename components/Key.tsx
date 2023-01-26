@@ -13,10 +13,8 @@ export default function Key({ keyValue, size }: Props) {
       style={{ height: size * 1.1, marginRight: size / 6 }}
     >
       <div style={{ fontSize: size }}>{keyValue[0].toUpperCase()}</div>
-      {(keyValue.includes("%2B") || keyValue.includes("+")) && (
-        <div style={{ fontSize: size * 0.9 }}>#</div>
-      )}
-      {keyValue.includes("-") && <div style={{ fontSize: size }}>♭</div>}
+      {keyValue.includes("#") && <div style={{ fontSize: size * 0.9 }}>#</div>}
+      {keyValue.includes("♭") && <div style={{ fontSize: size }}>♭</div>}
     </div>
   );
 }

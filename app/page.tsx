@@ -7,7 +7,7 @@ import Logo from "../public/logo-svg.svg";
 export default function Page() {
   return (
     <main className={styles.main}>
-      <Link href={"/chord/c?scale=maj"} className={styles.title}>
+      <Link href={"/chord/c?scale=maj&tension=none"} className={styles.title}>
         <span className={styles.chord}>Chord</span>{" "}
         <span className={styles.space}>Space</span>
         <Image

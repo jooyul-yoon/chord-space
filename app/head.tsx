@@ -3,7 +3,7 @@ export default function Head() {
     <>
       <title>Chord Space</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
-      <link rel="icon" href="/logo.ico" />
+      <link rel="icon" href="/public/favicon.ico" />
     </>
   );
 }

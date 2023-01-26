@@ -15,7 +15,7 @@ export default function Scale({ scale, size, tension }: Props) {
       {tension !== "none" && (
         <span
           className={styles.tension}
-          style={{ fontSize: size * 0.5, right: size * -0.7 }}
+          style={{ fontSize: size * 0.5, right: size * -0.75 }}
         >
           {tension.replace("sharp", "#").replace("flat", "♭")}
         </span>
