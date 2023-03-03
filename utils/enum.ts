@@ -1,5 +1,5 @@
 import { typeChord } from "./types";
-export const optionsKey = [
+export const optionsRoot = [
   {
     key: "C",
     text: "C",
@@ -74,7 +74,7 @@ export const optionsKey = [
   },
 ];
 
-export const optionsScale = [
+export const optionsQuality = [
   {
     key: "maj",
     text: "maj",
@@ -321,52 +321,4 @@ export const convertKey = [
   "A",
   "A#",
   "B",
-];
-
-export const chords: typeChord[] = [
-  {
-    scale: "maj",
-    tension: "none",
-    structure: [0, 4, 7],
-  },
-  {
-    scale: "min",
-    tension: "none",
-    structure: [0, 3, 7],
-  },
-  {
-    scale: "5",
-    tension: "none",
-    structure: [0, 7],
-  },
-  {
-    scale: "6",
-    tension: "none",
-    structure: [0, 4, 7, 9],
-  },
-  {
-    scale: "7",
-    tension: "none",
-    structure: [0, 4, 7, 11],
-  },
-  {
-    scale: "9",
-    tension: "none",
-    structure: [0, 4, 7, 11, 14],
-  },
-  {
-    scale: "11",
-    tension: "none",
-    structure: [0, 4, 7, 10, 14, 17],
-  },
-  {
-    scale: "13",
-    tension: "none",
-    structure: [0, 4, 7, 10, 14, 21],
-  },
-  {
-    scale: "dim",
-    tension: "none",
-    structure: [0, 3, 6],
-  },
 ];

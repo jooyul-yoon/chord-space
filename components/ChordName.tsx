@@ -1,18 +1,20 @@
 "use client";
 import styles from "./chord_name.module.css";
-import Key from "./Key";
-import Scale from "./Scale";
+import Root from "./Root";
+import Quality from "./Quality";
 
 interface Props {
-  keyValue: string;
-  scale: string;
+  root: string;
+  quality: string;
   tension: string;
+  bass: string;
 }
-export function ChordName({ keyValue, scale, tension }: Props) {
+export function ChordName({ root, quality, tension, bass }: Props) {
   return (
     <div className={styles.container}>
-      <Key keyValue={keyValue} size={60} />
-      <Scale scale={scale} tension={tension} size={50} />
+      <Root root={root} size={60} />
+      <Quality quality={quality} tension={tension} size={50} />
+      {bass !== "none" && <div>/{bass}</div>}
     </div>
   );
 }

@@ -2,15 +2,15 @@
 import styles from "./chord_name.module.css";
 
 interface Props {
-  scale: string;
+  quality: string;
   size: number;
   tension: string;
 }
-export default function Scale({ scale, size, tension }: Props) {
+export default function Quality({ quality, size, tension }: Props) {
   return (
     <div className={styles.scale}>
-      {scale !== undefined && scale !== "maj" && (
-        <span style={{ fontSize: size }}>{scale}</span>
+      {quality !== undefined && quality !== "maj" && (
+        <span style={{ fontSize: size }}>{quality}</span>
       )}
       {tension !== "none" && (
         <span

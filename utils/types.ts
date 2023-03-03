@@ -1,5 +1,5 @@
 export type typeChord = {
-  scale: typeScale;
+  quality: typeScale;
   tension: typeTension;
   structure: number[];
 };

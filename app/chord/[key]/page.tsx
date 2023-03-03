@@ -6,15 +6,14 @@ import Image from "next/image";
 import HomeBtn from "../../../public/logo.png";
 import Link from "next/link";
 import { ChordName } from "../../../components/ChordName";
-import Key from "../../../components/Key";
-import { Dropdown, Header, Icon } from "semantic-ui-react";
+import Root from "../../../components/Root";
+import { Icon, Select } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import { useRouter } from "next/navigation";
 import {
-  chords,
   convertKey,
-  optionsKey,
-  optionsScale,
+  optionsQuality,
+  optionsRoot,
   optionsTension,
 } from "../../../utils/enum";
 import { FretBoard } from "../../../components/FretBoard";
@@ -22,26 +21,27 @@ import { FretBoard } from "../../../components/FretBoard";
 export default function Page({ params, searchParams }) {
   const router = useRouter();
 
-  const keyValue = params.key
+  const root = params.key
     .toUpperCase()
     .replace("%2B", "#")
     .replace("+", "#")
     .replace("-", "♭");
-  const kId = convertKey.findIndex((k) => k === keyValue);
-  const scale = searchParams.scale;
+  const kId = convertKey.findIndex((k) => k === root);
+  const quality = searchParams.quality;
   const tension = searchParams.tension;
-  const chord = chords.find((c) => c.scale === scale && c.tension === tension);
+  const bass = searchParams.bass;
+
   const changeKey = (e: SyntheticEvent) => {
     const newKey = e.currentTarget.textContent
       .toLowerCase()
       .replace("#", "+")
       .replace("♭", "-");
 
-    let newPath = `/chord/${newKey}?scale=${scale}&tension=${tension}`;
+    let newPath = `/chord/${newKey}?quality=${quality}&tension=${tension}`;
     router.push(newPath);
   };
-  const changeScale = (e) => {
-    const newPath = `/chord/${keyValue}?scale=${e.currentTarget.innerText.toLowerCase()}&tension=${tension}`;
+  const changeQuality = (e) => {
+    const newPath = `/chord/${root}?quality=${e.currentTarget.innerText.toLowerCase()}&tension=${tension}`;
     router.push(newPath);
   };
   const changeTension = (e) => {
@@ -49,7 +49,7 @@ export default function Page({ params, searchParams }) {
       .toLowerCase()
       .replace("#", "sharp")
       .replace("♭", "flat");
-    const newPath = `/chord/${keyValue}?scale=${scale}&tension=${newTension}`;
+    const newPath = `/chord/${root}?quality=${quality}&tension=${newTension}`;
     router.push(newPath);
   };
 
@@ -59,62 +59,69 @@ export default function Page({ params, searchParams }) {
         <Image className={styles.homeBtn} src={HomeBtn} alt={"Logo"} />
       </Link>
       <div className={styles.top}>
-        <ChordName keyValue={keyValue} scale={scale} tension={tension} />
+        <ChordName
+          root={root}
+          quality={quality}
+          tension={tension}
+          bass={bass}
+        />
         <div style={{ display: "flex", gap: "20px", marginTop: "20px" }}>
-          {chord.structure.map((note, i) => (
-            <Key key={i} keyValue={convertKey[(note + kId) % 12]} size={20} />
-          ))}
+          {/* {chord.structure.map((note, i) => (
+            <Root key={i} root={convertKey[(note + kId) % 12]} size={20} />
+          ))} */}
         </div>
       </div>
+
       <div className={styles.middle}>
-        <FretBoard />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            height: "calc(100% - 106px)",
+          }}
+        >
+          <div
+            style={{ display: "grid", placeContent: "center", width: "60%" }}
+          >
+            <ins
+              className="scales_chords_api"
+              chord={`${root}`}
+              instrument="guitar"
+              output="image"
+              width="500px"
+              nolink="true"
+            ></ins>
+          </div>
+          <div className={styles.input}>
+            <Select
+              placeholder="Root"
+              options={optionsRoot}
+              defaultValue={root}
+              onChange={changeKey}
+            />
+            <Select
+              placeholder="Quality"
+              options={optionsQuality}
+              defaultValue={quality}
+            />
+            <Select
+              placeholder="Tension"
+              options={optionsTension}
+              defaultValue={tension}
+            />
+            <Select
+              placeholder="Bass"
+              options={optionsRoot}
+              defaultValue={bass}
+            />
+          </div>
+        </div>
         <div className={styles.position}>
           <h1>Position</h1>
           <div>
             <Icon name="angle left" fitted size="big" />
             <span>2</span>
             <Icon name="angle right" fitted size="big" />
-          </div>
-        </div>
-        <div className={styles.input}>
-          <div>
-            <span style={{ fontSize: "14px", marginRight: 5 }}>Key: </span>
-            <Dropdown
-              floating
-              labeled
-              header="Key"
-              options={optionsKey}
-              scrolling
-              closeOnBlur
-              onChange={changeKey}
-              defaultValue={keyValue}
-            />
-          </div>
-          <div>
-            <span style={{ fontSize: "14px", marginRight: 5 }}>Scale: </span>
-            <Dropdown
-              floating
-              labeled
-              header="Scale"
-              options={optionsScale}
-              scrolling
-              closeOnBlur
-              onChange={changeScale}
-              defaultValue={scale}
-            />
-          </div>
-          <div>
-            <span style={{ fontSize: "14px", marginRight: 5 }}>Tension: </span>
-            <Dropdown
-              options={optionsTension}
-              floating
-              labeled
-              header="Tension"
-              scrolling
-              closeOnBlur
-              defaultValue={tension}
-              onChange={changeTension}
-            />
           </div>
         </div>
       </div>
